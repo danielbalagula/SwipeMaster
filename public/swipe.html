@@ -1,0 +1,21 @@
+<io-pane>
+<div ng-if="cardsReady">
+        <td-cards>
+          <td-card ng-repeat="card in cards.active" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" ng-click="showProfile(card)">
+            <center><h1 class="startupName">{{card.name}}</h1></center>
+            <div class="image" ng-controller="CardCtrl">
+              <div class="no-text"><i class="icon ion-thumbsdown"></i></div>
+              <div class="yes-text"><i class="icon ion-thumbsup"></i></div>
+              <img ng-src="{{ card.logo_url }}" href="www.google.com">
+              <p class="startupInfo">Stage: {{card.stage}}</p>
+              <p class="startupInfo">Space: {{card.industry}}</p>
+              <p class="startupInfo">{{card.short_description}}</p>
+              <p class="startupInfo">{{getTags(card)}}</p>
+            </div>
+          </td-card>
+          <td-card id="end-card" drag="false">
+            <i class="icon ion-ios-refresh disable-user-behavior" ng-click="refreshCards()"></i>
+          </td-card>
+        </td-cards>
+      </div>
+</io-pane>

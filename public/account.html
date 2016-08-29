@@ -1,0 +1,25 @@
+<ion-header-bar class="bar bar-header bar-light">
+  <h1 class="title">{{username}}</h1>
+</ion-header-bar>
+
+<ion-content class="has-header">
+
+    <div class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Refer a Colleague</span>
+        <input type="text" placeholder="Colleague Mastercard Email" ng-model="refer_username">
+      </label>
+      <ion-checkbox ng-model="show_referral">Show me as the Referral</ion-checkbox>
+      <button class="button button-block button-positive" ng-disabled="accessValidation(refer_username)" ng-click="refer(refer_username, getShowReferralState(show_referral))">
+        Refer
+      </button>
+    </div>
+
+    <center>
+      <button class="button button-assertive" ng-click="logout()"">
+        Logout
+      </button>
+    </center>
+
+</ion-content>
+

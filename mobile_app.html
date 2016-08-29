@@ -1,0 +1,56 @@
+<center><a href="#desktop">Desktop Version</a></center>
+<md-toolbar class="appMenu">
+	<div layout="row" layout-align="end">
+		<md-button class="logoutButton" href="#logout" ng-click="logout()">
+			Logout
+		</md-button>
+		<span flex></span>
+		<md-button class="likedButton" ng-click="showLikes()" >
+			Likes
+		</md-button>
+	</div>
+</md-toolbar>
+<section layout="row" flex>
+	<md-sidenav
+		class="md-sidenav-right"
+		md-component-id="right">
+		<md-content>
+  			<md-list>
+	    			<md-subheader class="md-no-sticky">
+					<md-input-container>
+						<label>Search Likes</label>
+						<input ng-model="likedQuery">
+					</md-input-container>
+	   				</md-subheader>
+						<div class="likeddiv" ng-repeat="like in likes" ng-click="setStartupShown(like, true)">
+		    		<md-list-item>
+		        			{{ like.name }}
+		    		</md-list-item>
+						</div>
+    		</md-list>
+    	</md-content>
+	</md-sidenav>
+</section>
+<div>
+	<ul swing-stack>
+		<h3 align="center" ng-hide="startupsAvailable()"> Sorry, those were all the profiles we could find. <a href="" ng-click="getStartupsFromServer()"> Retry </a> </h3>
+		<div id="progress" ng-hide="hideLoadingProgress" layout="row" layout-sm="column" layout-align="space-around">
+			<md-progress-circular class="progressGetStartups" md-mode="indeterminate"></md-progress-circular>
+		</div>
+		<li
+			class="card"
+			swing-card
+			swing-on-throwoutleft="swipe(card, 0)"
+			swing-on-throwoutright="swipe(card, 1)"
+			ng-repeat="card in cards"
+			ng-click="setStartupShown(card,false)"
+			id="{{card._id}}"
+			>
+			<div><img class="thumbnail" ng-src="{{card.logo_url}}"></img></div>
+			<div class="startupName">{{card.name}}</div>
+			<div class="startupIndustry">{{card.industry}}</div>
+			<div class="startupStage">{{card.stage}}</div>
+			<div class="startupSDescription">{{card.short_description}}</div>
+		</li>
+	</ul>
+</div>

@@ -1,0 +1,19 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-positive">
+    <h1 class="title">{{cardToDisplay.name}}</h1>
+    <button class="button button-clear button-primary" ng-click="modal.hide()">Back</button>
+  </ion-header-bar>
+  <ion-content class="padding">
+    <div class="list">
+      <center><img ng-src="{{cardToDisplay.logo_url}}" width='25%'></img>
+        <div class="list">
+          <p>{{cardToDisplay.industry}}</p>
+          <p>Tags: {{getTagsForStartup(cardToDisplay)}} <a href ng-click="showTagPopup(cardToDisplay)">add custom tag</a></p>
+          <p>{{cardToDisplay.short_description}}</p>
+          <p>{{cardToDisplay.long_description}}</p>
+          <div class="video-container"><iframe ng-src="{{cardToDisplay.video_url}}" frameborder="0" width="560" height="315"></iframe></div>
+        </div>
+      <p> More text </p>
+    </div>
+  </ion-content>
+</ion-modal-view>

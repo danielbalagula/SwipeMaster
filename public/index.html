@@ -1,0 +1,32 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+
+		<script src="https://code.ionicframework.com/collide/0.0.4/collide.js"></script>
+		<script src="//code.ionicframework.com/1.0.0-beta.14/js/ionic.bundle.js"></script>
+		<script src="/ionic.tdcards2.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+
+		<link rel="stylesheet" href="https://code.ionicframework.com/contrib/ionic-contrib-tinder-cards/ionic.tdcards.css">
+		<link href="//code.ionicframework.com/1.0.0-beta.14/css/ionic.css" rel="stylesheet">
+
+		<link type="text/css" rel="stylesheet" href="main.css">
+		<script src="startpath.js"></script>
+		<script src="startpath_config.js"></script>
+		<script src="checkAuth.js"></script>
+		<script src="access.js"></script>
+		<script src="app.js"></script>
+
+		<title>StartPath</title>
+
+	</head>
+	<body ng-app='startpath'>
+
+	<div ui-view ng-controller="checkAuth"></div>
+
+	</body>
+
+</html>

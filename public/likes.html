@@ -1,0 +1,22 @@
+<ion-pane>
+  <div class="bar bar-header item-input-inset">
+  <label class="item-input-wrapper">
+    <i class="icon ion-ios-search placeholder-icon"></i>
+    <input type="text" placeholder="Search" ng-model="search.name">
+  </label>
+  <button class="button button-clear" ng-click="search.name = ''">
+    Cancel
+  </button>
+  </div>
+  <ion-content class="has-header">
+  <ion-scroll>
+    <div class="list">
+      <a class="item item-avatar" href="#" ng-repeat="like in likes | filter: search" ng-click="showProfile(like)">
+        <img ng-src={{like.logo_url}}>
+        <h2>{{like.name}}</h2>
+        <p>{{like.short_description}}</p>
+      </a>
+    </ion-list>
+  </div>
+  </ion-content>
+</ion-pane>

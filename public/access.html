@@ -1,0 +1,21 @@
+<ion-header-bar class="bar-dark">
+  <h1 class="title">StartPath</h1>
+</ion-header-bar>
+<ion-content class="has-header" scroll="false">
+  <div class="list">
+    <label class="item item-input item-floating-label">
+      <span class="input-label">Mastercard Email</span>
+      <input type="text" placeholder="Mastercard Email" ng-model="username">
+    </label>
+    <label class="item item-input item-floating-label">
+      <span class="input-label">Password</span>
+      <input type="password" placeholder="Password" ng-model="password">
+    </label>
+    <button class="button button-block button-balanced" ng-click="login(username, password)" ng-disabled="accessValidation(username, password)">
+      Login
+    </button>
+    <button class="button button-block button-positive" ng-click="register(username, password)" ng-disabled="accessValidation(username, password)">
+      Register
+    </button>
+  </div>
+</ion-content>
