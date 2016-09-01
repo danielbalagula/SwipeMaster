@@ -35,7 +35,7 @@ var sendConfirmationEmail = function(email, token){
 		var content = new helper.Content('text/html', "<html>Hello, please click <a href='http://localhost:3000/verify/" + token + "'>here</a> to validate your account.</html>");
 		var mail = new helper.Mail(from_email, subject, to_email, content);
 
-		var sg = require('sendgrid')('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');
+		var sg = require('sendgrid')();
 		var request = sg.emptyRequest({
 			method: 'POST',
 			path: '/v3/mail/send',
@@ -63,7 +63,7 @@ var sendRefferalEmail = function(from, to, show_from, callback){
 		}
 		var mail = new helper.Mail(from_email, subject, to_email, content);
 
-		var sg = require('sendgrid')('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');
+		var sg = require('sendgrid')();
 		var request = sg.emptyRequest({
 			method: 'POST',
 			path: '/v3/mail/send',
